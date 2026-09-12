@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Billiards: Chapter 1 - Ayankoya Prod.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="2APstyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        .reader-body {
+            max-width: 750px;
+            font-family: 'Georgia', serif;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin: 0 auto;
+        }
+        /* Reading Themes */
+        body.theme-light { background-color: #f8f9fa; color: #212529; }
+        body.theme-dark { background-color: #121212; color: #e0e0e0; }
+        body.theme-sepia { background-color: #f4ecd8; color: #4a3b32; }
+
+        .theme-dark .card-control { background-color: #1e1e1e; border-color: #333; color: #fff; }
+        .theme-sepia .card-control { background-color: #e8dfc8; border-color: #d8cca8; color: #4a3b32; }
+    </style>
+</head>
+<body id="readerBody" class="theme-light d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-success fw-bold" href="2AyankoyaPresentations.html">Ayankoya Prod.</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="2AyankoyaPresentations.html">Home</a>
+                <a class="nav-link" href="2APSecondPage.html">Character Hub</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <a href="2AyankoyaPresentations.html" class="btn btn-outline-secondary btn-sm">
+                &larr; Back to Series
+            </a>
+
+            <div class="btn-group btn-group-sm">
+                <button class="btn btn-outline-secondary" onclick="changeFontSize(-1)">A-</button>
+                <button class="btn btn-outline-secondary" onclick="changeFontSize(1)">A+</button>
+                <button class="btn btn-outline-secondary" onclick="setTheme('light')">Light</button>
+                <button class="btn btn-outline-secondary" onclick="setTheme('sepia')">Sepia</button>
+                <button class="btn btn-outline-secondary" onclick="setTheme('dark')">Dark</button>
+            </div>
+        </div>
+
+        <div class="card p-3 shadow-sm mb-4 card-control">
+            <div class="row align-items-center g-2">
+                <div class="col-md-6">
+                    <h4 class="m-0 fw-bold text-success">The Billiards</h4>
+                    <small class="text-muted">Part 1: Crash Land</small>
+                </div>
+                <div class="col-md-6 d-flex justify-content-md-end gap-2">
+                    <button class="btn btn-sm btn-outline-success" disabled>&larr; Prev</button>
+                    
+                    <select class="form-select form-select-sm w-auto" onchange="location = this.value;">
+                        <option value="Reader.html" selected>Part 1</option>
+                        <option value="Reader-Ch2.html">Part 2</option>
+                    </select>
+
+                    <a href="Reader-Ch2.html" class="btn btn-sm btn-outline-success">Next &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container mb-5 flex-grow-1">
+        <article id="textContent" class="reader-body px-3">
+            
+            <h2 class="text-center fw-bold mb-4">Part 1</h2>
+
+            <p></p>
+
+            <p></p>
+
+            <p></p>
+
+            <p></p>
+
+            <p class="text-center my-4 fw-bold">***</p>
+
+            <p></p>
+
+        </article>
+    </main>
+
+    <div class="container my-4 text-center">
+        <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-outline-secondary" disabled>&larr; Previous Chapter</button>
+            <a href="Reader-Ch2.html" class="btn btn-success fw-bold px-4">Next Chapter &rarr;</a>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light pt-4 pb-3 text-center">
+        <p class="mb-0 text-muted">&copy; 2026 Ayankoya Productions. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentFontSize = 1.15;
+
+        function changeFontSize(delta) {
+            currentFontSize += delta * 0.1;
+            if (currentFontSize < 0.85) currentFontSize = 0.85;
+            if (currentFontSize > 1.6) currentFontSize = 1.6;
+            document.getElementById('textContent').style.fontSize = currentFontSize + 'rem';
+        }
+
+        function setTheme(themeName) {
+            const body = document.getElementById('readerBody');
+            body.className = 'd-flex flex-column min-vh-100 theme-' + themeName;
+        }
+    </script>
+</body>
+</html>
